@@ -1,0 +1,29 @@
+# Build output (Angular CLI)
+frontend/dist
+frontend/out-tsc
+frontend/.angular/cache
+frontend/bazel-out
+
+# Node
+frontend/node_modules
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDEs & editors
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Misc
+.sass-cache/
+coverage
+testem.log
+typings
+
+# System
+.DS_Store
+Thumbs.db
