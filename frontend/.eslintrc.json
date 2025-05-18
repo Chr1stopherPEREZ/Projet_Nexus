@@ -1,0 +1,43 @@
+{
+  "root": true,
+  "ignorePatterns": ["dist/", "node_modules/"],
+
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": ["tsconfig.json"],
+        "createDefaultProgram": true
+      },
+      "plugins": [
+        "@angular-eslint",
+        "@typescript-eslint",
+        "prettier",
+        "cypress"
+      ],
+      "extends": [
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended",
+        "plugin:cypress/recommended"
+      ],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off",
+        "prettier/prettier": ["error", { "singleQuote": true }]
+      }
+    },
+    {
+      "files": ["*.html"],
+      "plugins": ["@angular-eslint/template"],
+      "extends": ["plugin:@angular-eslint/template/recommended"]
+    },
+    {
+      "files": ["cypress/**/*.cy.{ts,js}"],
+      "env": { "cypress/globals": true },
+      "plugins": ["cypress"],
+      "extends": ["plugin:cypress/recommended"]
+    }
+  ]
+}
