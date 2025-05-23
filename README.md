@@ -159,14 +159,49 @@ erDiagram
   pnpm run test:e2e
   ```
 
+## Commandes
+
+- **Lint** : Vérifier le code avec ESLint
+  ```bash
+  pnpm run lint
+  ```
+
+- **Tests unitaires** : Exécuter les tests avec Vitest
+  ```bash
+  pnpm run test
+  ```
+
+- **Tests avec couverture** : Exécuter les tests avec rapport de couverture
+  ```bash
+  pnpm run test:coverage
+  ```
+
+- **Tests E2E** : Exécuter les tests Cypress
+  ```bash
+  pnpm run cypress:open  # Interface graphique
+  pnpm run cypress:run   # Mode headless
+  ```
+
+- **Build** : Compiler l'application pour la production
+  ```bash
+  pnpm run build
+  ```
+
 ## CI/CD
 
 Le workflow **front-ci.yml** exécute :
 
 1. `pnpm install --frozen-lockfile`
 2. `pnpm run lint`
-3. `pnpm run test:unit`
-4. `pnpm run build`
+3. `pnpm run test`
+4. `pnpm run build --configuration production`
 5. Publication sur GitHub Pages via `peaceiris/actions-gh-pages`
 
+## Déploiement
+
+L'application est déployée automatiquement sur GitHub Pages à chaque push sur la branche main :
+[https://chr1stopherperez.github.io/Projet_Nexus/](https://chr1stopherperez.github.io/Projet_Nexus/)
+
 ## Captures d'Écran
+
+![Capture](Capture.png)
